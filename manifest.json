@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "英文阅读助手",
+  "version": "1.0",
+  "description": "一款简单易用的英文阅读辅助工具，支持划词翻译和发音功能，让阅读英文文档更轻松。",
+  "author": "你的名字",
+  "homepage_url": "https://github.com/你的用户名/项目名",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_title": "英文阅读助手"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
