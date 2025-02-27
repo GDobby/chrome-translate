@@ -29,3 +29,52 @@
 
 - 本扩展使用 Google Translate API 进行翻译，请确保你的网络可以访问 Google 服务
 - 建议在实际使用时替换为付费的翻译 API 以获得更好的服务质量和更高的请求限制
+
+## 本地开发和调试
+
+### 下载代码
+
+```bash
+# 克隆仓库
+git clone https://github.com/GDobby/chrome-translate.git
+
+# 进入项目目录
+cd chrome-translate
+```
+
+### 在 Chrome 中加载插件
+
+1. 打开 Chrome 浏览器
+2. 在地址栏输入 `chrome://extensions/` 进入扩展管理页面
+3. 开启右上角的"开发者模式"
+4. 点击"加载已解压的扩展程序"
+5. 选择项目目录
+
+### 调试方法
+
+1. **调试弹窗界面**
+   - 右键点击扩展图标
+   - 选择"审查弹出内容"
+   - 使用 Chrome DevTools 调试 popup.html
+
+2. **调试内容脚本**
+   - 在任意网页右键点击，选择"检查"
+   - 在 DevTools 的 Console 面板中可以看到来自 content.js 的日志输出
+   - 在 Sources 面板的 Content Scripts 部分可以找到并调试 content.js
+
+3. **实时开发**
+   - 修改代码后，回到扩展管理页面
+   - 点击扩展卡片右下角的"刷新"按钮
+   - 刷新网页以加载最新的内容脚本
+
+### 常见问题
+
+1. **扩展不生效**
+   - 确保扩展已启用
+   - 检查 Console 面板是否有错误信息
+   - 尝试重新加载扩展
+
+2. **API 调用失败**
+   - 检查网络连接
+   - 确认 manifest.json 中的权限配置是否正确
+   - 查看 Network 面板中的请求状态
